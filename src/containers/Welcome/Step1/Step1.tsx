@@ -176,7 +176,7 @@ const Step1 = (p: Wizard.StepProps) => {
   /* This `useEffect` hook is responsible for initializing the form values for the country and language
   fields when the component mounts. Here's a breakdown of what it does: */
   useEffect(() => {
-    const localStorageCountry = localStorage.getItem('countryResult');
+    const localStorageCountry = localStorage.getItem('virumap-countryResult');
     const virufyWizard = localStorage.getItem('virumap-app-wizard');
     if (virufyWizard) {
       const parsedVirufyWizard = JSON.parse(virufyWizard);
@@ -199,7 +199,7 @@ const Step1 = (p: Wizard.StepProps) => {
             lang: countryInfo?.defaultLang,
             supported: countryInfo?.supportedLang,
           };
-          localStorage.setItem('countryResult', JSON.stringify(countryDataLS));
+          localStorage.setItem('virumap-countryResult', JSON.stringify(countryDataLS));
           setValue('country', countryName);
           if (countryInfo) {
             setValue('language', countryInfo.defaultLang[0].value);
